@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<!-- 
+Author: Mohamed
+Assignment: Radioactive Decay Calculator
+
+Purpose:
+Here are codes that will be used in the HTML code section
+-->
+
+<html>
+    <head>
+        <title>Radioactive Decay Calculator</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- Styles classes are created to be added in the HTML code and website: -->
+        <style> 
+            .nuclidemodal{
+                width: 100%;
+                height: 100%;
+                background-color: rgba(0, 0, 0, 0.7);
+                position: absolute;
+                top: 0;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                display: none;
+            }
+            
+            .nuclidemodalcontent{
+                width: 150px;
+                height: 500px;
+                background-color: white;
+                border-radius: 4px;
+                text-align: center;
+                padding: 20px;
+                position: relative;
+                animation-name: modalanim;
+                animation-duration: 1.5s;
+            }
+            
+            .modalclose{
+                position: absolute;
+                top: 0;
+                right: 10px;
+                cursor: pointer;
+            }
+            
+            .center{
+                text-align: center;
+                background-color: aquamarine;
+            }
+
+            .tablecenter{
+                margin-left: auto;
+                margin-right: auto;
+                background-color: firebrick;
+                color: white;
+                border-color: black;
+            }
+            
+            .tablepadding{
+                padding: 20px;
+            }
+            
+            @Keyframes modalanim{
+                from{opacity: 0}
+                to {opacity:1}
+            }
+        </style>
+    </head>
+    <body>
+        <!-- Start of the program assessment -->
+        <h1 class="center">Radioactive Decay Calculator</h1> 
+        
+        <!-- Creating the table to include radioactive materials -->
+        <div class="container">
+            <div class="tab mathalf">
+                <table id="table" border="5" class="tablecenter">
+                    <tr>
+                        <th style="text-align: center" class="tablepadding">Nuclide name</th>
+                        <th style="text-align: center" class="tablepadding">Half-Life</th>
+                        <th style="text-align: center" class="tablepadding">Start Activity</th>
+                        <th style="text-align: center" class="tablepadding">After 1 Day</th>
+                        <th style="text-align: center" class="tablepadding">After 10 Days</th>
+                        <th style="text-align: center" class="tablepadding">After 100 Days</th>
+                        <th style="text-align: center" class="tablepadding">After 1000 Days</th>
+                        <th style="text-align: center" class="tablepadding">Days < 1</th>
+                    </tr>
+                </table>
+                
+                <button id="modal-open" class="button"> Add new Nuclide ></button>
+                
+                <!-- Getting the total activity from the table -->
+                <div class="center"> Time for total activity to decay:
+                    <input type="number" id="totalact" disabled>
+                </div>
+                
+                <div class="nuclidemodal" id="nuclide-modal">
+                    <div class="nuclidemodalcontent" >
+                        <div class="nuclidemodalheader">
+                            <h2>Nuclide Input Data:</h2>
+                            <p>Input nuclide information in the following tabs</p>
+                        <!-- Creating keywords in order to relate the input variables into the assigned keywords -->
+                        <div class="tab">
+                                Nuclide name: <input type="text" name="nucname" id="nucname" placeholder="Nuclide Name">
+                                Half-Life: <input type="number" name="halflife" id="halflife" placeholder="Half-Life">
+                                Start Activity: <input type="number" name="activity" id="activity" placeholder="Start Activity">
+                                <button id="submit" onclick="importdata();">Submit Data ></button>
+                        </div>
+                        <div class="modalclose">X</div>
+                    </div>
+                  </div>
+                </div>
+                <script src="main.js"></script>
+            </div>
+        </div>
+    </body>
+</html>
