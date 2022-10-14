@@ -1,6 +1,6 @@
 /* 
 Author: Mohamed
-Assignment: Radioactive Decay Calculator
+Project: Radioactive Decay Calculator
 
 Purpose:
 Here are codes that will be used in the HTML code section
